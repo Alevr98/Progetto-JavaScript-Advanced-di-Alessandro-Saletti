@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <title>QOL | Quality of Life</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo-w"></div>
+    </header>
+    <!-- Search Bar -->
+    <section id="form-w">
+      <form class="search-form" id="search-form" autocomplete="off">
+        <input
+          type="text"
+          id="search-bar"
+          name="search-bar"
+          placeholder="Search here.."
+          required
+        />
+        <button type="submit" class="btn" id="btn">
+          <i class="fa fa-search"></i>
+        </button>
+        <a href="javascript:void(0)" id="clear-btn"></a>
+        <!-- Javascript List -->
+        <ul class="list"></ul>
+      </form>
+    </section>
+    <!-- Results rappresentation -->
+    <main>
+      <section class="result-rappresentation">
+        <div class="container alert-banner">
+          <div class="row align-items-center justify-content-center">
+            <div class="danger col-lg-8">
+              <div
+                class="alert alert-danger w-50 align-items-center"
+                role="alert"
+              >
+                No cities found. Please, retry!
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container results-container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 city-name text-left p-5 mt-5">
+              <h2></h2>
+              <div class="description"></div>
+            </div>
+            <div class="col-lg-4 city-mark">
+              <div class="text-mark d-none">
+                <h4><span id="mark"></span>/100</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid first-chart-w">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 chart-wrap">
+              <div>
+                <canvas id="canvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid second-chart-w">
+          <div class="row">
+            <div class="col-lg-7 mx-auto chart-container">
+              <canvas id="canvas2"></canvas>
+            </div>
+            <div class="col-lg-4 polar-area">
+              <canvas id="canvas3"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ChartJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <!-- Javascript -->
+    <script src="./assets/script/script.js"></script>
+    <!-- Bootstrap -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
