@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png" />
     <link
       rel="stylesheet"
       href="./node_modules/bootstrap/dist/css/bootstrap.css"
@@ -27,7 +28,7 @@
     <header>
       <div class="logo-w"></div>
     </header>
-    <!-- Search Bar -->
+    <!-- Form with Search Bar -->
     <section id="form-w">
       <form class="search-form" id="search-form" autocomplete="off">
         <input
@@ -41,12 +42,12 @@
           <i class="fa fa-search"></i>
         </button>
         <a href="javascript:void(0)" id="clear-btn"></a>
-        <!-- Javascript List -->
         <ul class="list"></ul>
       </form>
     </section>
     <!-- Results rappresentation -->
     <main>
+      <!-- Alert Banner -->
       <section class="result-rappresentation">
         <div class="container alert-banner">
           <div class="row align-items-center justify-content-center">
@@ -60,35 +61,56 @@
             </div>
           </div>
         </div>
-        <div class="container results-container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-lg-8 city-name text-left p-5 mt-5">
-              <h2></h2>
-              <div class="description"></div>
-            </div>
-            <div class="col-lg-4 city-mark">
-              <div class="text-mark d-none">
-                <h4><span id="mark"></span>/100</h4>
+        <!-- Results Rappresentation -->
+        <div class="results-container d-none">
+          <!-- City Description and Mark -->
+          <div class="container description-wrap">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-lg-8 city-name text-center p-5">
+                <h2></h2>
+                <div class="description text-center"></div>
+              </div>
+              <div class="col-lg-4 city-mark">
+                <div class="text-mark d-none">
+                  <h4><span id="mark"></span>/100</h4>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="container-fluid first-chart-w">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-lg-8 chart-wrap">
-              <div>
+          <!-- First Chart -->
+          <div class="container-fluid first-chart-w">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-lg-8 chart-wrap">
                 <canvas id="canvas"></canvas>
               </div>
             </div>
           </div>
-        </div>
-        <div class="container-fluid second-chart-w">
-          <div class="row">
-            <div class="col-lg-7 mx-auto chart-container">
-              <canvas id="canvas2"></canvas>
+          <!-- Background Decoration -->
+          <div class="container-fluid decoration">
+            <div class="row">
+              <div class="col-xl-12 bg-decoration"></div>
             </div>
-            <div class="col-lg-4 polar-area">
-              <canvas id="canvas3"></canvas>
+          </div>
+          <!-- Second and Third Charts -->
+          <div class="container-fluid second-chart-w">
+            <div class="row row-second-chart">
+              <div class="col-xl-6 mx-auto chart-container">
+                <div class="chart2-title">
+                  <h2>Other usefull Data</h2>
+                </div>
+                <canvas id="canvas2"></canvas>
+              </div>
+              <div class="col-xl-4 mx-auto polar-area">
+                <div class="chart3-title">
+                  <h2>Compare to Toronto!</h2>
+                  <h5>
+                    Compare your City with one of the highest level: Toronto!
+                  </h5>
+                </div>
+                <div class="chart3-wrap">
+                  <canvas id="canvas3"></canvas>
+                </div>
+              </div>
             </div>
           </div>
         </div>
