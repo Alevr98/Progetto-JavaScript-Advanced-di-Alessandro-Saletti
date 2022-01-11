@@ -59,7 +59,6 @@ async function showCity(city) {
   );
   let data = await res.json();
   if (res.status === 200) {
-    console.log(data);
     /* City Description */
     cityDesc.innerHTML = data.summary;
     /* Show and Hide content */
@@ -67,8 +66,7 @@ async function showCity(city) {
     ul.classList.add("d-none");
     markWrap.classList.remove("d-none");
     /* Charts function */
-    /*     console.log(data.categories[15]["score_out_of_10"]); */
-    chartData(data);
+    getChartData(data, city);
     /* Add city to title (space handling) */
     if (city.includes("-") === true) {
       let newCity = city.replaceAll("-", " ");
@@ -134,6 +132,7 @@ searchBar.addEventListener("focus", () => {
 
 /* Event on li click */
 ul.addEventListener("click", (e) => {
+  console.log("Ciao gianni");
   let city = e.target.textContent;
   /* Handling spaces input */
   if (city.includes(" ") === true) {
@@ -149,16 +148,40 @@ ul.addEventListener("click", (e) => {
   }
 });
 
+/* Event to hide ul while input has no focus */
+
 /* **************CHART************** */
+
+/* Get Toronto Data */
+let torontoName = [];
+let torontoScore = [];
+async function getChartData(data, city) {
+  /* Toronto Data */
+  let resT = await fetch(
+    `https://api.teleport.org/api/urban_areas/slug:toronto/scores/`
+  );
+  let dataT = await resT.json();
+  for (i = 12; i < 17; i++) {
+    torontoName.push(dataT.categories[i].name);
+    torontoScore.push(
+      Math.round(dataT.categories[i]["score_out_of_10"] * 100) / 100
+    );
+  }
+  /* Get All the data for the Charts */
+  chartData(data, city);
+  torontoName = [];
+  torontoScore = [];
+}
 
 /* Set array for the chart */
 
-function chartData(data) {
+function chartData(data, city) {
   /* First Chart data */
   var arrayLabels = [];
   var arrayLabels2 = [];
   var arrayVotes = [];
   var arrayVotes2 = [];
+  var arrayVotes3 = [];
   let chartObj = data.categories;
   chartObj.forEach((e) => {
     if (arrayLabels.length < 6) {
@@ -171,9 +194,12 @@ function chartData(data) {
 
   /* Second Chart Data */
 
-  for (i = 6; i < 14; i++) {
+  for (i = 6; i < 12; i++) {
     arrayLabels2.push(chartObj[i].name);
     arrayVotes2.push(Math.round(chartObj[i]["score_out_of_10"] * 100) / 100);
+  }
+  for (i = 12; i < 17; i++) {
+    arrayVotes3.push(Math.round(chartObj[i]["score_out_of_10"] * 100) / 100);
   }
 
   /* Chart Settings */
@@ -182,6 +208,9 @@ function chartData(data) {
   }
   if (window.myChart2 != null) {
     window.myChart2.destroy();
+  }
+  if (window.myChart3 != null) {
+    window.myChart3.destroy();
   }
 
   /* Main Chart */
@@ -215,6 +244,14 @@ function chartData(data) {
       ],
     },
     options: {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: {
+            boxWidth: 0,
+          },
+        },
+      },
       legend: {
         labels: {
           boxSize: 0,
@@ -253,6 +290,14 @@ function chartData(data) {
       ],
     },
     options: {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: {
+            boxWidth: 0,
+          },
+        },
+      },
       indexAxis: "y",
       legend: {
         labels: {
@@ -270,6 +315,44 @@ function chartData(data) {
           grid: { display: false },
           max: 10,
         },
+      },
+    },
+  });
+
+  /* Third Chart Data */
+
+  let newCity = city[0].toUpperCase() + city.substring(1);
+  window.myChart3 = new Chart(document.getElementById("canvas3"), {
+    type: "radar",
+    data: {
+      labels: torontoName,
+      datasets: [
+        {
+          label: "Toronto",
+          fill: true,
+          backgroundColor: "rgba(179,181,198,0.2)",
+          borderColor: "rgba(179,181,198,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(179,181,198,1)",
+          data: torontoScore,
+        },
+        {
+          label: newCity,
+          fill: true,
+          backgroundColor: "rgba(255,99,132,0.2)",
+          borderColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(255,99,132,1)",
+          pointBorderColor: "#fff",
+          data: arrayVotes3,
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      title: {
+        display: true,
+        text: "Distribution in % of world population",
       },
     },
   });
