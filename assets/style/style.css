@@ -240,7 +240,7 @@ form:valid a {
 .bg-decoration {
   height: 30vh;
   width: 100%;
-    background: url(../images/background-decoration.png) no-repeat center
+  background: url(../images/background-decoration.png) no-repeat center;
   background-size: cover;
   margin: 2rem 0;
 }
