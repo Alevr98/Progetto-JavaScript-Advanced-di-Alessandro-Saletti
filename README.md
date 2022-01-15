@@ -9,7 +9,7 @@
 
 * [DESCRIPTION](#description)
 * [WEBSITE FEATURES](#website-features)
-* [HOW DOES IT WORKS ?](#how-does-it-works)
+* [HOW DOES IT WORKS ?](#how-does-it-works-?)
 * [CONTACT ME](#contact-me)
 
 
@@ -20,9 +20,6 @@ In this project I realised a WebSite that fetch an external API and show the dat
 ---
 
 ### WEBSITE FEATURES
-
-![favicon](https://user-images.githubusercontent.com/88582424/149629436-6a35697d-1046-4360-a158-22944dfc5bb5.png)
-
 
 The Charts explains you better the strengths of each town and the connection with the API allowed to stay up on date.
 
