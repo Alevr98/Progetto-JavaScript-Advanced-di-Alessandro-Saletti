@@ -2,7 +2,7 @@
 
 # Quality of Life
 ## JAVASCRIPT PROJECT FOR START2IMPACT
-TAKE A LOOK TO THE WEBSITE --> https://alevr98.github.io/Progetto-JavaScript-Advanced-di-Alessandro-Saletti/
+TAKE A LOOK TO THE WEBSITE: https://alevr98.github.io/Progetto-JavaScript-Advanced-di-Alessandro-Saletti/
 ---
 
 ## CONTENTS
