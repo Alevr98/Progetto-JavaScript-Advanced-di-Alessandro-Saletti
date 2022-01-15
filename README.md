@@ -9,6 +9,7 @@
 
 * [DESCRIPTION](#description)
 * [WEBSITE FEATURES](#counter-features)
+* [HOW DOES IT WOKRS ?](#HOW-DOES-IT-WORKS-?)
 * [CONTACT ME](#contact-me)
 
 
