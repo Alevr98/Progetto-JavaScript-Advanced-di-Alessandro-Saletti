@@ -1,6 +1,7 @@
-![Bannercounter](https://user-images.githubusercontent.com/88582424/140100865-e143680d-5a3d-45bc-9ab8-48eed5545bb2.png)
+![header](https://user-images.githubusercontent.com/88582424/149629364-d7cc2527-151b-4fcf-b4a1-50bbffd99c8c.png)
 
-# JAVASCRIPT PROJECT FOR START2IMPACT
+# Quality of Life
+## JAVASCRIPT PROJECT FOR START2IMPACT
 
 ---
 
@@ -19,11 +20,16 @@ In this project I realised a WebSite that fetch an external API and show the dat
 
 ### WEBSITE FEATURES
 
-![counter](https://user-images.githubusercontent.com/88582424/140183862-cc386bfd-aea5-4d28-9b00-2c385ee08e21.png) </div>
+![favicon](https://user-images.githubusercontent.com/88582424/149629436-6a35697d-1046-4360-a158-22944dfc5bb5.png)
+
 
 The Charts explains you better the strengths of each town and the connection with the API allowed to stay up on date.
 
 ---
+### HOW DOES IT WORKS ?
+![3](https://user-images.githubusercontent.com/88582424/149629456-0867284b-e0af-49d2-af09-381747376a7d.png)
 
+
+---
 ### CONTACT ME 
 Please feel free to contact me for any information or check out my web site for more details --> https://alevr98.github.io/Alessandro-Saletti---HTML-e-CSS/
