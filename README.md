@@ -14,13 +14,13 @@ TAKE A LOOK TO THE WEBSITE: https://alevr98.github.io/Progetto-JavaScript-Advanc
 
 
 ### DESCRIPTION
-In this project I realised a WebSite that fetch an external API and show the data required about main cities in the world. I believe that this can help you to figure out which is the best city for your habits, allowing also to compare the towns each other.
+In this project I created a WebSite that catches data from an external API and shows the data required about main cities in the world. I believe that this can help you figure out which is the best city for your habits, allowing also to compare the towns one another.
 
 ---
 
 ### WEBSITE FEATURES
 
-The Charts explains you better the strengths of each town and the connection with the API allowed to stay up on date.
+The Charts explain you better the strengths of each town and data are always updated.
 
 ---
 ### HOW DOES IT WORKS ?
