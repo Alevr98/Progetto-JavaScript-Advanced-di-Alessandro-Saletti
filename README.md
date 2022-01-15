@@ -8,8 +8,7 @@
 ## CONTENTS
 
 * [DESCRIPTION](#description)
-* [WEBSITE FEATURES](#counter-features)
-* [HOW DOES IT WOKRS ?](#how-does-it-works-?)
+* [WEBSITE FEATURES](#website-features)
 * [CONTACT ME](#contact-me)
 
 
