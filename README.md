@@ -9,7 +9,7 @@
 
 * [DESCRIPTION](#description)
 * [WEBSITE FEATURES](#counter-features)
-* [HOW DOES IT WOKRS ?](#HOW-DOES-IT-WORKS-?)
+* [HOW DOES IT WOKRS ?](#how-does-it-works-?)
 * [CONTACT ME](#contact-me)
 
 
