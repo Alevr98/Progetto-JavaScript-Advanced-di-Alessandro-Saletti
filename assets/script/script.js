@@ -4,6 +4,7 @@ const clearInput = () => {
   input.value = "";
 };
 
+/* Declare variables */
 const searchBar = document.getElementById("search-bar");
 const form = document.getElementById("search-form");
 const searchBtn = document.getElementById("btn");
@@ -125,14 +126,8 @@ function removeElements() {
   });
 }
 
-// Second focus on input hide previous results
-searchBar.addEventListener("focus", () => {
-  /* resultsContainer.classList.add("d-none"); */
-});
-
 /* Event on li click */
 ul.addEventListener("click", (e) => {
-  console.log("Ciao gianni");
   let city = e.target.textContent;
   /* Handling spaces input */
   if (city.includes(" ") === true) {
@@ -148,15 +143,13 @@ ul.addEventListener("click", (e) => {
   }
 });
 
-/* Event to hide ul while input has no focus */
-
 /* **************CHART************** */
 
 /* Get Toronto Data */
 let torontoName = [];
 let torontoScore = [];
 async function getChartData(data, city) {
-  /* Toronto Data */
+  /* Third Chart Data */
   let resT = await fetch(
     `https://api.teleport.org/api/urban_areas/slug:toronto/scores/`
   );
@@ -172,6 +165,12 @@ async function getChartData(data, city) {
   torontoName = [];
   torontoScore = [];
 }
+
+searchBar.addEventListener("input", (e) => {
+  if (searchBar.value === "") {
+    ul.classList.add("d-none");
+  }
+});
 
 /* Set array for the chart */
 
@@ -202,7 +201,7 @@ function chartData(data, city) {
     arrayVotes3.push(Math.round(chartObj[i]["score_out_of_10"] * 100) / 100);
   }
 
-  /* Chart Settings */
+  /* Destroy previous Charts */
   if (window.myChart != null) {
     window.myChart.destroy();
   }
@@ -319,7 +318,7 @@ function chartData(data, city) {
     },
   });
 
-  /* Third Chart Data */
+  /* Third Chart */
 
   let newCity = city[0].toUpperCase() + city.substring(1);
   window.myChart3 = new Chart(document.getElementById("canvas3"), {
