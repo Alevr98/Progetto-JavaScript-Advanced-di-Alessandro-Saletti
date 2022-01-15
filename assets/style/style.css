@@ -198,7 +198,7 @@ form:valid a {
   z-index: -1;
 }
 .text-mark {
-  background: url(../assets/images/mark.png) no-repeat center center/cover;
+  background: url(../images/mark.png) no-repeat center center/cover;
   filter: drop-shadow(2px 3px 27px #fff);
   height: 200px;
   width: 200px;
@@ -240,7 +240,7 @@ form:valid a {
 .bg-decoration {
   height: 30vh;
   width: 100%;
-    background: url(../assets/images/background-decoration.png) no-repeat center
+    background: url(../images/background-decoration.png) no-repeat center
   background-size: cover;
   margin: 2rem 0;
 }
@@ -318,7 +318,7 @@ form:valid a {
 }
 @media screen and (max-width: 871px) {
   header > .logo-w {
-    background: url(../assets/images/bg-responsive.png) no-repeat center
+    background: url(../images/bg-responsive.png) no-repeat center
       center/cover;
     background-size: 45rem;
   }
@@ -343,7 +343,7 @@ form:valid a {
 /* Mobile Media queries */
 @media screen and (max-width: 530px) {
   header > .logo-w {
-    background: url(../assets/images/bg-responsive-smarthphone.png) no-repeat
+    background: url(../images/bg-responsive-smarthphone.png) no-repeat
       center center/cover;
     background-size: 45rem;
   }
